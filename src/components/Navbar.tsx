@@ -42,7 +42,7 @@ export default function Navbar() {
           {/* Navigation Links (Desktop) */}
           <nav className={styles.desktopNav}>
             <Link href="#home" className={`${styles.navLink} ${styles.blueHover}`}>Home</Link>
-            <Link href="#team" className={`${styles.navLink} ${styles.redHover}`}>Team</Link>
+            <Link href="#team" className={`${styles.navLink} ${styles.redHover}`}>Members</Link>
             <Link href="#about" className={`${styles.navLink} ${styles.blueHover}`}>About</Link>
             <Link href="#services" className={`${styles.navLink} ${styles.redHover}`}>Services</Link>
             <Link href="#contact" className={`${styles.navLink} ${styles.blueHover}`}>Contact</Link>
@@ -50,9 +50,14 @@ export default function Navbar() {
 
           {/* Action Button (Desktop) */}
           <div className={styles.actionContainer}>
-            <Link href="#contact" className={styles.ctaBtn}>
-              Contact Us
-            </Link>
+            <a
+              href="https://github.com/Evan52436/ACKSecurity"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.ctaBtn}
+            >
+              GitHub
+            </a>
           </div>
         </div>
 
@@ -76,9 +81,15 @@ export default function Navbar() {
           <Link href="#about" className={styles.mobileNavLink} onClick={closeMobileMenu}>About</Link>
           <Link href="#services" className={styles.mobileNavLink} onClick={closeMobileMenu}>Services</Link>
           <Link href="#contact" className={styles.mobileNavLink} onClick={closeMobileMenu}>Contact</Link>
-          <Link href="#contact" className={styles.mobileCtaBtn} onClick={closeMobileMenu}>
-            Contact Us
-          </Link>
+          <a
+            href="https://github.com/Evan52436/ACKSecurity"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.mobileCtaBtn}
+            onClick={closeMobileMenu}
+          >
+            GitHub
+          </a>
         </nav>
       </div>
     </header>

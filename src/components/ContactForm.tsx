@@ -93,7 +93,7 @@ export default function ContactForm() {
                     value={formData.name}
                     onChange={handleChange}
                     className={styles.input}
-                    placeholder="Alice Smith"
+                    placeholder="nama aseli coy"
                     required
                   />
                 </div>
@@ -110,7 +110,7 @@ export default function ContactForm() {
                     value={formData.organization}
                     onChange={handleChange}
                     className={styles.input}
-                    placeholder="e.g. Acme Corp / School Department"
+                    placeholder="perusahaan/organisasi klean "
                   />
                 </div>
               </div>
@@ -163,7 +163,7 @@ export default function ContactForm() {
                   value={formData.message}
                   onChange={handleChange}
                   className={styles.textarea}
-                  placeholder="Describe your architecture scope, timeline, and security goals..."
+                  placeholder="titip pesan untuk kami -ACK"
                   rows={5}
                   required
                 />
