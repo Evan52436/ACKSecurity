@@ -1,49 +1,184 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Nordic Editorial Palette */
+  --bg-primary: #F1F5F9; /* Cool Slate Grey */
+  --bg-white: #FFFFFF;
+  
+  --accent-blue: #2C3E50; /* Slate Indigo / Steel Blue */
+  --accent-blue-hover: #1A252F;
+  --accent-blue-light: rgba(44, 62, 80, 0.08);
+  --accent-blue-border: rgba(44, 62, 80, 0.2);
+
+  --accent-red: #C2410C; /* Terracotta / Rust */
+  --accent-red-hover: #9A3412;
+  --accent-red-light: rgba(194, 65, 12, 0.06);
+  --accent-red-border: rgba(194, 65, 12, 0.2);
+
+  /* Light Blue & Light Green Tones */
+  --light-blue-bg: #E0F2FE;
+  --light-blue-border: rgba(14, 165, 233, 0.2);
+  --light-blue-text: #0369A1;
+
+  --light-green-bg: #DCFCE7;
+  --light-green-border: rgba(34, 197, 94, 0.2);
+  --light-green-text: #15803D;
+
+  /* Semantic Theme Badges (Muted Nordic Editorial Tones) */
+  --color-tag-terracotta: #C2410C;
+  --color-tag-terracotta-bg: rgba(194, 65, 12, 0.08);
+  --color-tag-terracotta-border: rgba(194, 65, 12, 0.2);
+
+  --color-tag-steel: #475569;
+  --color-tag-steel-bg: rgba(71, 85, 105, 0.08);
+  --color-tag-steel-border: rgba(71, 85, 105, 0.2);
+
+  --color-tag-sage: #3B604A;
+  --color-tag-sage-bg: rgba(59, 96, 74, 0.08);
+  --color-tag-sage-border: rgba(59, 96, 74, 0.2);
+
+  --color-tag-sand: #B45309;
+  --color-tag-sand-bg: rgba(180, 83, 9, 0.08);
+  --color-tag-sand-border: rgba(180, 83, 9, 0.2);
+
+  --color-tag-purple: #5B21B6;
+  --color-tag-purple-bg: rgba(91, 33, 182, 0.08);
+  --color-tag-purple-border: rgba(91, 33, 182, 0.2);
+
+  --text-dark: #0F172A; /* Slate black dark ink text for premium readability */
+  --text-muted: #475569; /* Secondary muted text */
+  --text-light: #FFFFFF;
+  
+  --border-color: #E2E8F0; /* Crisp divider grey */
+  
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.03);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.05);
+  --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.08);
+
+  /* Borders & Transitions */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.2s ease;
+
+  /* Layout Constants */
+  --max-width: 1200px;
+  --header-height: 72px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+/* Reset */
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: #F8FAFC;
+  background-image: radial-gradient(circle, rgba(71, 85, 105, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--text-dark);
+  font-family: var(--font-poppins), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sync-bg {
+  /* Inherited globally on body */
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-dark);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
 a {
   color: inherit;
   text-decoration: none;
+  transition: all var(--transition-fast);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* Utilities */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
   }
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+/* Card (.bb Card from Senior Team) */
+.bbCard {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bbCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border-color: var(--border-color);
+}
+
+/* Tech Tag Pill Badge */
+.techTag {
+  font-family: monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-transform: uppercase;
+}
+
+/* Dashed Section Divider line */
+.dashedDiv {
+  height: 1px;
+  background: repeating-linear-gradient(90deg, var(--border-color) 0, var(--border-color) 10px, transparent 10px, transparent 20px);
+  margin: 0 auto;
+  max-width: var(--max-width);
+  width: calc(100% - 80px);
+}
+
+@media (max-width: 768px) {
+  .dashedDiv {
+    width: calc(100% - 40px);
+  }
+}
+
+/* Form controls */
+input, textarea, select {
+  font-family: inherit;
 }

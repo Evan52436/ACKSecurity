@@ -1,0 +1,133 @@
+.wrapper {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 10;
+}
+
+.widget {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.segment {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.divider {
+  width: 1px;
+  height: 28px;
+  background-color: rgba(44, 62, 80, 0.15);
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--accent-blue);
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+}
+
+.value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.4;
+}
+
+.redText {
+  color: var(--accent-red) !important;
+}
+
+.timestamp {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Pulses */
+.pulseBlue,
+.pulseRed {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.pulseBlue {
+  background-color: var(--accent-blue);
+}
+
+.pulseRed {
+  background-color: var(--accent-red);
+}
+
+.pulseBlue::after,
+.pulseRed::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: ripple 1.6s infinite ease-out;
+}
+
+.pulseBlue::after {
+  box-shadow: 0 0 0 4px rgba(44, 62, 80, 0.4);
+}
+
+.pulseRed::after {
+  box-shadow: 0 0 0 4px rgba(194, 65, 12, 0.45);
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+  .desktopOnly {
+    display: none;
+  }
+  .divider:nth-child(6) {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .widget {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .divider {
+    display: none;
+  }
+  .segment {
+    width: 100%;
+  }
+}

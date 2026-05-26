@@ -1,0 +1,94 @@
+.services {
+  background-color: transparent;
+  position: relative;
+}
+
+.sectionHeader {
+  text-align: left;
+  margin-bottom: 48px;
+  max-width: 720px;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.card {
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.cardDescription {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.pillTagBlue,
+.pillTagGreen {
+  font-family: monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+
+.pillTagBlue {
+  background-color: var(--light-blue-bg);
+  border: 1px solid var(--light-blue-border);
+  color: var(--light-blue-text);
+}
+
+.pillTagGreen {
+  background-color: var(--light-green-bg);
+  border: 1px solid var(--light-green-border);
+  color: var(--light-green-text);
+}

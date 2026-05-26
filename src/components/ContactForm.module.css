@@ -1,0 +1,266 @@
+.contact {
+  background-color: transparent;
+  position: relative;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.titleGroup {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.03em;
+}
+
+.titleTag {
+  font-family: monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--accent-blue-light);
+  border: 1px solid var(--accent-blue-border);
+  color: var(--accent-blue);
+  text-transform: uppercase;
+}
+
+.accentLine {
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent-red);
+  margin: 8px auto 24px auto;
+  border-radius: var(--radius-full);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.formContainer {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 48px;
+}
+
+@media (max-width: 768px) {
+  .formContainer {
+    padding: 32px 20px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.row {
+  display: flex;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.formGroup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formGroupFull {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  letter-spacing: 0.02em;
+}
+
+.required {
+  color: var(--accent-red);
+  margin-left: 2px;
+}
+
+.optional {
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 0.75rem;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  outline: none;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-inset);
+}
+
+.select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%232C3E50' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.input:hover,
+.select:hover,
+.textarea:hover {
+  border-color: rgba(44, 62, 80, 0.4);
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: var(--accent-blue);
+  background-color: var(--text-light);
+  box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.15), var(--shadow-inset);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.errorBanner {
+  background-color: rgba(194, 65, 12, 0.08);
+  border: 1px solid rgba(194, 65, 12, 0.2);
+  color: var(--accent-red);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.submitContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.submitBtn {
+  background-color: var(--text-dark);
+  color: var(--text-light);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  padding: 16px 40px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+  width: 100%;
+  max-width: 320px;
+}
+
+.submitBtn:hover {
+  background-color: var(--accent-red);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(194, 65, 12, 0.25);
+}
+
+.submitBtn:active {
+  transform: translateY(0);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Success Card */
+.successCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px 0;
+}
+
+.successIcon {
+  margin-bottom: 20px;
+  animation: scaleUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.successTitle {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent-blue);
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+}
+
+.successText {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+.resetBtn {
+  background-color: transparent;
+  border: 1px solid var(--accent-blue);
+  color: var(--accent-blue);
+  padding: 10px 24px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.resetBtn:hover {
+  background-color: var(--accent-blue-light);
+  border-color: var(--accent-blue-hover);
+  color: var(--accent-blue-hover);
+}
