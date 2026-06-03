@@ -170,7 +170,7 @@ export default function Hero() {
               <p className={styles.orgDesc}>
                 Security Team, Both Securing Networks, Codes, Operating Systems And Pentesting Websites, Codes, and Networks.
               </p>
-              <div className={styles.orgLink}>🔗 https://ackteams.id</div>
+              <div className={styles.orgLink}>🔗 https://ackteams.com</div>
               <div className={styles.orgStats}>
                 <div className={`${styles.statBox} ${styles.statYellow}`}>
                   <div className={styles.statNum}>4</div>
