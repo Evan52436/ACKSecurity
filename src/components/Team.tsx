@@ -32,9 +32,9 @@ const coreMembers: TeamMember[] = [
   },
   {
     name: "Rynza ",
-    title: " // Attack",
+    title: "Linux // Defend",
     image: "/images/placeholder.svg",
-    tag: "WEBSEC",
+    tag: "DEVOPS",
     tagStyle: "purple",
     github: "https://github.com/Rhanfahreza",
   },
